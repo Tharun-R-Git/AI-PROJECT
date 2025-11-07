@@ -1,0 +1,11 @@
+streamlit
+google-generativeai
+PyPDF2
+python-dotenv
+pandas
+plotly
+openai
+speech_recognition
+sounddevice
+bcrypt
+numpy

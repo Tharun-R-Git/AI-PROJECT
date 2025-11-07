@@ -1,0 +1,49 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ---- Virtual Environments ----
+.venv/
+venv/
+env/
+ENV/
+
+# ---- IDE / Editor ----
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# ---- OS / Cache ----
+.DS_Store
+Thumbs.db
+
+# ---- Data & Databases ----
+*.db
+*.sqlite3
+*.sqlite
+
+# ---- Environment & Secrets ----
+.env
+*.env
+apikeys.json
+config.yaml
+
+# ---- Logs ----
+*.log
+logs/
+nohup.out
+
+# ---- Streamlit Cache ----
+.streamlit/
+.cache/
+
+# ---- Build / Distribution ----
+build/
+dist/
+*.egg-info/
+
+# ---- Misc ----
+data copy/
+__pycache__/

@@ -1,0 +1,160 @@
+﻿,Company,Month,Placed,Average CTC (LPA)
+0,10xConstruction,Oct-25,2,15
+1,Ab InBev,Oct-25,1,17.5
+2,Accenture AEH PPO,Jul-25,31,11.8
+3,Adobe,Aug-25,1,45
+4,Alstom,Sep-25,14,6.8
+5,American Express,Aug-25,8,22
+6,Apple,Sep-25,9,
+7,Aptiv,Oct-25,18,9.5
+8,Arrise Solutions,Sep-25,9,12
+9,Arrise Solutions,Oct-25,6,12
+10,BNY Mellon PPO,Aug-25,4,25
+11,Bain Capability Networks,Aug-25,39,15.8
+12,Bajaj Finserv,Sep-25,19,12
+13,Baker Huges,Sep-25,4,10
+14,Bharati Airtel,Oct-25,20,14.75
+15,Blackrock ,Aug-25,19,18
+16,Bluebird R&D,Oct-25,5,7
+17,Bottomline,Aug-25,19,14
+18,Canary AI PPO,Aug-25,2,12
+19,Caterpillar,Oct-25,5,14.5
+20,Caterpillar Hackathon,Sep-25,23,14.5
+21,Char-IOT PPO,Aug-25,2,7
+22,Chubb,Sep-25,35,11.6
+23,Cisco,Sep-25,4,24.7
+24,Cisco PPO,Aug-25,9,24.7
+25,Citi PPO,Sep-25,18,18
+26,Cognizant NPN,Oct-25,37,4.5
+27,Commvault,Aug-25,8,33
+28,Couchbase,Jul-25,16,32
+29,DE Shaw PPO,Jul-25,1,56
+30,Daimler India PPO,Aug-25,3,7.5
+31,Dell,Aug-25,18,13.72
+32,Dell PPO,Aug-25,11,14.45
+33,Deloitte India,Oct-25,32,7.6
+34,Deloitte India,Sep-25,127,7.6
+35,Deloitte USI,Oct-25,3,7.6
+36,Deloitte USI,Sep-25,88,7.6
+37,EY GDS,Oct-25,113,7.61
+38,EY GDS PPO,Sep-25,13,7.6
+39,Ecolab,Oct-25,6,5.5
+40,Elgi Equipment,Oct-25,4,8.5
+41,Epsilon,Sep-25,9,12
+42,ExxonMobil,Sep-25,12,13.49
+43,Fastenal,Sep-25,4,17
+44,Fidelity PPO,Jul-25,24,13
+45,FischerJordan LLC,Oct-25,1,
+46,Fractal Analytics ,Oct-25,13,7.5
+47,Godrej PPO,Sep-25,2,12
+48,Goldman Sachs,Sep-25,8,10.5
+49,HPE,Oct-25,1,12
+50,HPE CTY PPO,Aug-25,13,17.5
+51,Honeywell,Oct-25,15,9
+52,Honeywell,Sep-25,58,9
+53,Human Resocia,Aug-25,5,24
+54,IBM CIC,Oct-25,62,4.75
+55,IBM PPO,Aug-25,3,12.5
+56,IBM-RIL,Aug-25,2,24
+57,IDFC,Aug-25,15,18.1
+58,Incedo,Oct-25,25,7.55
+59,Indigo PPO,Oct-25,1,
+60,Infosys HWI DSE,Aug-25,4,6.25
+61,Infosys HWI SP,Aug-25,3,9.5
+62,Intuit PPO,Sep-25,2,45
+63,JP Morgan Internship,Aug-25,21,19.75
+64,JP Morgan PPO,Aug-25,3,19.75
+65,Jindal PPO,Sep-25,21,21
+66,John Deere PPO,Aug-25,1,11.1
+67,Jurin.ai,Oct-25,1,70
+68,KIRLOSKAR,Sep-25,2,8.37
+69,KLA Technologies PPO,Jul-25,4,25
+70,KPMG,Oct-25,41,5.833333333333333
+71,KPMG,Sep-25,7,5
+72,Kickdrum,Aug-25,2,15.73
+73,Kinaxis,Aug-25,5,
+74,Kinaxis,Sep-25,9,12
+75,LSEG,Sep-25,7,12.5
+76,MIQ,Oct-25,1,12
+77,MIQ,Sep-25,2,12
+78,MUFG,Sep-25,19,20
+79,Marvell PPO,Jul-25,15,27.16
+80,Meesho,Jul-25,2,60
+81,Microsoft PPO,Aug-25,5,55
+82,Microsoft PPO,Oct-25,2,55
+83,Morgan Stanley PPO,Aug-25,2,25
+84,Motorq PPO,Jul-25,3,100
+85,Natwest,Sep-25,10,21
+86,Nielsen,Sep-25,8,15
+87,Nutanix,Sep-25,9,19
+88,Nxp Semiconductors,Sep-25,2,23
+89,Okta,Jul-25,12,28
+90,Optiv Security PPO,Jul-25,3,10.6
+91,Optum ,Oct-25,22,19.2
+92,Optum PPO,Aug-25,16,19.2
+93,Oracle,Oct-25,19,21.5
+94,Oracle PPO,Aug-25,2,19.2
+95,PayPal PPO,Aug-25,13,34.5
+96,PegaSystems Worldwide,Oct-25,8,14.5
+97,PhonePe,Jul-25,7,33.5
+98,Presidio ,Aug-25,5,10
+99,ProcDNA,Aug-25,15,11.74
+100,Procyon TechSolution,Oct-25,5,6
+101,Prodapt ,Sep-25,106,6.666666666666667
+102,Pwc ,Sep-25,58,9
+103,Pwc PPO,Sep-25,1,9
+104,QSC,Sep-25,9,10.3
+105,Qualcomm PPO,Aug-25,2,33
+106,RT Camp,Oct-25,2,12
+107,Ring Central,Jul-25,4,28.1
+108,Rystad Energy,Oct-25,11,10.9
+109,SAP Labs,Aug-25,3,24.5
+110,Sabre ,Aug-25,7,18.9
+111,Samsung PPO,Aug-25,6,21.5
+112,Sandisk,Aug-25,1,17
+113,Sapiens,Oct-25,23,14.25
+114,Saviynt,Aug-25,3,20
+115,Schlumberger ,Sep-25,4,12.183333333333332
+116,Schneider Electric,Aug-25,19,12
+117,Shell,Oct-25,2,18
+118,Shipsy,Aug-25,2,14
+119,Siemens EDA Internship,Oct-25,21,20.5
+120,Siemens Energy,Sep-25,4,6
+121,Societe Generale,Aug-25,21,12.2
+122,Societe Generale,Oct-25,2,12.2
+123,Solarwinds,Oct-25,3,17.5
+124,Swiss Re,Jul-25,4,14
+125,Tecdia PPO,Aug-25,2,14
+126,Tekion,Sep-25,3,20
+127,Toshiba,Sep-25,8,10.05
+128,Tredence,Sep-25,12,12
+129,Tresata,Sep-25,3,10
+130,UBS ,Aug-25,19,14.5
+131,UBS PPO,Jul-25,3,14.5
+132,Uber,Oct-25,5,
+133,ValueCreed,Sep-25,5,10
+134,Varroc,Aug-25,8,12.5
+135,Verity ,Oct-25,7,7.5
+136,Verizon,Aug-25,28,9
+137,Visa PPO,Aug-25,4,41
+138,Visa PPO,Sep-25,8,33
+139,Viseton,Sep-25,21,7
+140,Volvo,Jul-25,3,8
+141,Walmart Internship,Oct-25,4,6
+142,Walmart PPO,Sep-25,6,22.6
+143,WatchGuard,Aug-25,2,10
+144,Wells Fargo PPO,Jul-25,22,24
+145,Western Digital ,Sep-25,4,15
+146,Western Digital PPO,Jul-25,1,20
+147,WorkDay,Aug-25,13,23.1
+148,Wuerth India ,Oct-25,2,6
+149,Xeno,Sep-25,2,12
+150,Xflow Payments,Oct-25,2,30
+151,ZS Associates ,Aug-25,36,13.6
+152,ZS Associates PPO,Jul-25,18,13.65
+153,Zanskar,Aug-25,2,21
+154,Zluri,Sep-25,5,18
+155,Zomato,Jul-25,2,56
+156,ZoomRx,Oct-25,3,8
+157,Zynga,Aug-25,5,32
+158,​Warner Bros. Discovery,Sep-25,1,17
