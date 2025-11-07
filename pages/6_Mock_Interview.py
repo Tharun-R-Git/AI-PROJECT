@@ -13,21 +13,11 @@ if st.session_state.get("role") == "admin":
 
 import os
 import json
-import io
-import wave
 from dotenv import load_dotenv
 import google.generativeai as genai
-import sounddevice as sd
-from openai import OpenAI
 
 load_dotenv()
 gemini_api_key = os.getenv('GOOGLE_API_KEY')
-openai_api_key = os.getenv('OPENAI_API_KEY')
-
-# Initialize OpenAI client for Whisper transcription
-openai_client = None
-if openai_api_key:
-    openai_client = OpenAI(api_key=openai_api_key)
 
 st.title("🤖 AI-Powered Interview Preparation Guide")
 st.caption("Practice interview questions and get instant feedback on your answers")
@@ -83,34 +73,6 @@ def generate_questions(jd: str):
     )
     resp = gemini_model.generate_content(prompt)
     return safe_parse_json(resp.text or "")
-
-def get_voice_input(duration=30, samplerate=16000):
-    """Record audio and transcribe using OpenAI Whisper."""
-    if not openai_client:
-        return None, "OpenAI API key not configured. Please add OPENAI_API_KEY to .env file."
-    
-    try:
-        # Record audio for specified duration
-        audio = sd.rec(int(duration * samplerate), samplerate=samplerate, channels=1, dtype='int16')
-        sd.wait()  # Wait for recording to complete
-        
-        wav_io = io.BytesIO()
-        with wave.open(wav_io, 'wb') as wf:
-            wf.setnchannels(1)
-            wf.setsampwidth(2)
-            wf.setframerate(samplerate)
-            wf.writeframes(audio.tobytes())
-        wav_io.seek(0)
-        
-        # Transcribe using Whisper
-        transcription = openai_client.audio.transcriptions.create(
-            model="whisper-1",
-            file=("voice.wav", wav_io)
-        )
-        
-        return transcription.text.strip(), None
-    except Exception as e:
-        return None, f"Error recording/transcribing: {str(e)}"
 
 def evaluate_text_answer(section, jd, question, answer):
     prompt = (
@@ -207,101 +169,29 @@ if "questions" in st.session_state:
             
             # Show answer input only if not submitted
             if not submitted:
-                # Input mode selection
-                input_mode = st.radio(
-                    "Choose input method:",
-                    ["✍️ Type Answer", "🎤 Voice Answer"],
-                    horizontal=True,
-                    key=f"input_mode_{section_i}_{question_i}"
+                answer_text = st.text_area(
+                    "✍️ Type your answer here:",
+                    value=st.session_state.get("answer_text", ""),
+                    height=150,
+                    key=f"answer_{section_i}_{question_i}",
+                    placeholder="Enter your answer to the question above..."
                 )
-                
-                answer_text = st.session_state.get("answer_text", "")
-                current_answer_key = f"current_answer_{section_i}_{question_i}"
-                
-                if input_mode == "✍️ Type Answer":
-                    answer_text = st.text_area(
-                        "✍️ Type your answer here:",
-                        value=answer_text,
-                        height=150,
-                        key=current_answer_key,
-                        placeholder="Enter your answer to the question above..."
-                    )
-                else:
-                    # Voice input mode
-                    st.markdown("**🎤 Voice Recording**")
-                    st.info("💡 Click 'Record Answer' to start recording. You'll have time to speak your answer.")
-                    
-                    # Recording duration slider
-                    record_duration = st.slider(
-                        "Recording duration (seconds):",
-                        min_value=10,
-                        max_value=60,
-                        value=30,
-                        key=f"duration_{section_i}_{question_i}",
-                        help="How long you want to record your answer"
-                    )
-                    
-                    # Record button
-                    record_btn = st.button(
-                        "🎙️ Record Answer", 
-                        key=f"record_{section_i}_{question_i}", 
-                        use_container_width=True,
-                        type="primary"
-                    )
-                    
-                    if record_btn:
-                        with st.spinner(f"🎤 Recording for {record_duration} seconds... Speak now!"):
-                            transcribed_text, error = get_voice_input(duration=record_duration)
-                            
-                            if error:
-                                st.error(f"❌ {error}")
-                            elif transcribed_text:
-                                answer_text = transcribed_text
-                                st.session_state["answer_text"] = transcribed_text
-                                st.success("✅ Voice transcribed successfully!")
-                                
-                                # Show transcribed text
-                                st.markdown("**📝 Transcribed Answer:**")
-                                st.text_area(
-                                    "Your transcribed answer:",
-                                    value=transcribed_text,
-                                    height=120,
-                                    key=f"transcribed_{section_i}_{question_i}",
-                                    help="Review and edit if needed before submitting"
-                                )
-                    
-                    # Show current answer if available (editable)
-                    if answer_text:
-                        st.markdown("**📝 Your Answer (you can edit):**")
-                        answer_text = st.text_area(
-                            "Edit your answer if needed:",
-                            value=answer_text,
-                            height=120,
-                            key=current_answer_key,
-                            help="Review and edit your transcribed answer before submitting"
-                        )
                 
                 col1, col2 = st.columns([1, 1])
                 with col1:
-                    submit_btn = st.button("✅ Submit Answer", type="primary", use_container_width=True, key=f"submit_{section_i}_{question_i}")
+                    submit_btn = st.button("✅ Submit Answer", type="primary", use_container_width=True)
                 with col2:
-                    skip_btn = st.button("⏭️ Skip Question", use_container_width=True, key=f"skip_{section_i}_{question_i}")
+                    skip_btn = st.button("⏭️ Skip Question", use_container_width=True)
                 
                 if submit_btn:
-                    # Get answer from the appropriate source
-                    if current_answer_key in st.session_state:
-                        final_answer = st.session_state[current_answer_key]
-                    else:
-                        final_answer = st.session_state.get("answer_text", "")
-                    
-                    if not final_answer or not final_answer.strip():
-                        st.warning("⚠️ Please provide an answer (type or record) before submitting.")
+                    if not answer_text.strip():
+                        st.warning("⚠️ Please type your answer before submitting.")
                     else:
                         with st.spinner("🤔 Evaluating your answer..."):
-                            feedback = evaluate_text_answer(section_name, jd_text, current_question, final_answer)
+                            feedback = evaluate_text_answer(section_name, jd_text, current_question, answer_text)
                             if feedback:
                                 st.session_state["feedback"] = feedback
-                                st.session_state["answer_text"] = final_answer
+                                st.session_state["answer_text"] = answer_text
                                 st.session_state["submitted"] = True
                                 st.rerun()
                             else:
